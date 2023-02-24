@@ -1,0 +1,8 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE CodeBlocks_compiler>
+<CodeBlocks_compiler name="GNU GCC Compiler for RISC-V"
+                     id="riscv-elf-gcc"
+                     weight="60">
+    <Path type="master">
+    </Path>
+</CodeBlocks_compiler>
