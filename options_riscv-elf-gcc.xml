@@ -36,31 +36,31 @@
     <Switch name="linkerNeedsLibExtension" value="false"/>
 
     <Category name="Debugging">
-		<Option name="Produce debugging information"
-				option="-g"
-				supersedes="-g1 -g2 -g3 -ggdb -ggdb1 -ggdb2 -ggdb3 -s"/>
-		<Option name="Produce level 1 debugging information (minimal)"
-				option="-g1"
-				supersedes="-g -g2 -g3 -ggdb -ggdb1 -ggdb2 -ggdb3 -s"/>
-		<Option name="Produce level 2 debugging information (default, same as -g)"
-				option="-g2"
-				supersedes="-g -g1 -g3 -ggdb -ggdb1 -ggdb2 -ggdb3 -s"/>
-		<Option name="Produce level 3 debugging information (extra)"
-				option="-g3"
-				supersedes="-g -g1 -g2 -ggdb -ggdb1 -ggdb2 -ggdb3 -s"/>
-		<Option name="Produce debugging information for use by GDB"
-				option="-ggdb"
-				supersedes="-g -g1 -g2 -g3 -ggdb1 -ggdb2 -ggdb3 -s"/>
-		<Option name="Produce level 1 debugging information for use by GDB (minimal)"
-				option="-ggdb1"
-				supersedes="-g -g1 -g2 -g3 -ggdb -ggdb2 -ggdb3 -s"/>
-		<Option name="Produce level 2 debugging information for use by GDB (default, same as -ggdb)"
-				option="-ggdb2"
-				supersedes="-g -g1 -g2 -g3 -ggdb -ggdb1 -ggdb3 -s"/>
-		<Option name="Produce level 3 debugging information for use by GDB (extra)"
-				option="-ggdb3"
-				supersedes="-g -g1 -g2 -g3 -ggdb -ggdb1 -ggdb2 -s"/>
-	</Category>
+        <Option name="Produce debugging information"
+                option="-g"
+                supersedes="-g1 -g2 -g3 -ggdb -ggdb1 -ggdb2 -ggdb3 -s"/>
+        <Option name="Produce level 1 debugging information (minimal)"
+                option="-g1"
+                supersedes="-g -g2 -g3 -ggdb -ggdb1 -ggdb2 -ggdb3 -s"/>
+        <Option name="Produce level 2 debugging information (default, same as -g)"
+                option="-g2"
+                supersedes="-g -g1 -g3 -ggdb -ggdb1 -ggdb2 -ggdb3 -s"/>
+        <Option name="Produce level 3 debugging information (extra)"
+                option="-g3"
+                supersedes="-g -g1 -g2 -ggdb -ggdb1 -ggdb2 -ggdb3 -s"/>
+        <Option name="Produce debugging information for use by GDB"
+                option="-ggdb"
+                supersedes="-g -g1 -g2 -g3 -ggdb1 -ggdb2 -ggdb3 -s"/>
+        <Option name="Produce level 1 debugging information for use by GDB (minimal)"
+                option="-ggdb1"
+                supersedes="-g -g1 -g2 -g3 -ggdb -ggdb2 -ggdb3 -s"/>
+        <Option name="Produce level 2 debugging information for use by GDB (default, same as -ggdb)"
+                option="-ggdb2"
+                supersedes="-g -g1 -g2 -g3 -ggdb -ggdb1 -ggdb3 -s"/>
+        <Option name="Produce level 3 debugging information for use by GDB (extra)"
+                option="-ggdb3"
+                supersedes="-g -g1 -g2 -g3 -ggdb -ggdb1 -ggdb2 -s"/>
+    </Category>
 
     <if platform="windows">
         <Option name="Profile code when executed"
@@ -77,14 +77,14 @@
                 supersedes="-s"/>
     </else>
 
-	<Option name="Make the type char be signed"
-			option="-fsigned-char"
-			category="General"
-			supersedes="-funsigned-char"/>
-	<Option name="Make the type char be unsigned"
-			option="-funsigned-char"
-			category="General"
-			supersedes="-fsigned-char"/>
+    <Option name="Make the type char be signed"
+            option="-fsigned-char"
+            category="General"
+            supersedes="-funsigned-char"/>
+    <Option name="Make the type char be unsigned"
+            option="-funsigned-char"
+            category="General"
+            supersedes="-fsigned-char"/>
 
     <Common name="warnings"/>
 
@@ -120,101 +120,101 @@
     </Category>
 
     <Common name="optimization"/>
-	
+
     <Option name="Don't keep the frame pointer in a register for functions that don't need one"
             option="-fomit-frame-pointer"
             category="Optimization"
             checkAgainst="-g -ggdb"
             checkMessage="You have debugging symbols enabled. This is Not A Good Thing(tm) when optimizing..."/>
-	<Option name="Place each function into its own section in the output file"
-			option="-ffunction-sections"
+    <Option name="Place each function into its own section in the output file"
+            option="-ffunction-sections"
             category="Optimization"/>
-	<Option name="Place each data item into its own section in the output file"
-			option="-fdata-sections"
+    <Option name="Place each data item into its own section in the output file"
+            option="-fdata-sections"
             category="Optimization"/>
 
     <Category name="RISC-V CPU specific">
-		<Option name="Use of PLTs when generating position-independent code: allow (default)"
-				option="-mplt"
-				supersedes="-mno-plt"/>
-		<Option name="Use of PLTs when generating position-independent code: disallow"
-				option="-mno-plt"
-				supersedes="-mplt"/>
-		<Option name="Use hardware floating-point divide and square root instructions: allow"
-				option="-mfdiv"
-				supersedes="-mno-fdiv"/>
-		<Option name="Use hardware floating-point divide and square root instructions: disallow"
-				option="-mno-fdiv"
-				supersedes="-mfdiv"/>
-		<Option name="Use hardware instructions for integer division: allow"
-				option="-mdiv"
-				supersedes="-mno-div"/>
-		<Option name="Use hardware instructions for integer division: disallow"
-				option="-mno-div"
-				supersedes="-mdiv"/>
-		<Option name="Produce code conforming to ISA specification version 2.2"
-				option="-misa-spec=2.2"
-				supersedes="-misa-spec=20190608 -misa-spec=20191213"/>
-		<Option name="Produce code conforming to ISA specification version 20190608"
-				option="-misa-spec=20190608"
-				supersedes="-misa-spec=2.2 -misa-spec=20191213"/>
-		<Option name="Produce code conforming to ISA specification version 20191213 (default)"
-				option="-misa-spec=20191213"
-				supersedes="-misa-spec=2.2 -misa-spec=20190608"/>
-		<Option name="Use smaller but slower prologue/epilogue code that uses library calls: allow"
-				option="-msave-restore"
-				supersedes="-mno-save-restore"/>
-		<Option name="Use smaller but slower prologue/epilogue code that uses library calls: disallow (default)"
-				option="-mno-save-restore"
-				supersedes="-msave-restore"/>
-		<Option name="Attempt to make more use of compressed load/store instructions: allow"
-				option="-mshorten-memrefs"
-				supersedes="-mno-shorten-memrefs"/>
-		<Option name="Attempt to make more use of compressed load/store instructions: disallow"
-				option="-mno-shorten-memrefs"
-				supersedes="-mshorten-memrefs"/>
-		<Option name="Generate unaligned memory accesses: allow"
-				option="-mstrict-align"
-				supersedes="-mno-strict-align"/>
-		<Option name="Generate unaligned memory accesses: disallow"
-				option="-mno-strict-align"
-				supersedes="-mstrict-align"/>
-		<Option name="Generate code for the medium-low code model"
-				option="-mcmodel=medlow"
-				supersedes="-mcmodel=medany"/>
-		<Option name="Generate code for the medium-any code model"
-				option="-mcmodel=medany"
-				supersedes="-mcmodel=medlow"/>
-		<Option name="Use assembler relocation operators when dealing with symbolic addresses: allow"
-				option="-mexplicit-relocs"
-				supersedes="-mno-exlicit-relocs"/>
-		<Option name="Use assembler relocation operators when dealing with symbolic addresses: disallow"
-				option="-mno-exlicit-relocs"
-				supersedes="-mexplicit-relocs"/>
-		<Option name="Take advantage of linker relaxations: allow (default)"
-				option="-mrelax"
-				supersedes="-mno-relax"/>
-		<Option name="Take advantage of linker relaxations: disallow"
-				option="-mno-relax"
-				supersedes="-mrelax"/>
-		<Option name="Emit RISC-V attribute to record extra information into ELF objects: allow"
-				option="-mriscv-attribute"
-				supersedes="-mno-riscv-attribute"/>
-		<Option name="Emit RISC-V attribute to record extra information into ELF objects: disallow"
-				option="-mno-riscv-attribute"
-				supersedes="-mriscv-attribute"/>
-		<Option name="CSR checking: allow"
-				option="-mcsr-check"
-				supersedes="-mno-csr-check"/>
-		<Option name="CSR checking: disallow"
-				option="-mno-csr-check"
-				supersedes="-mcsr-check"/>
-		<Option name="Alignment of variables and constants: X register width (default)"
-				option="-malign-data=xlen"
-				supersedes="-malign-data=natural"/>
-		<Option name="Alignment of variables and constants: natural"
-				option="-malign-data=natural"
-				supersedes="-malign-data=xlen"/>				
+        <Option name="Use of PLTs when generating position-independent code: allow (default)"
+                option="-mplt"
+                supersedes="-mno-plt"/>
+        <Option name="Use of PLTs when generating position-independent code: disallow"
+                option="-mno-plt"
+                supersedes="-mplt"/>
+        <Option name="Use hardware floating-point divide and square root instructions: allow"
+                option="-mfdiv"
+                supersedes="-mno-fdiv"/>
+        <Option name="Use hardware floating-point divide and square root instructions: disallow"
+                option="-mno-fdiv"
+                supersedes="-mfdiv"/>
+        <Option name="Use hardware instructions for integer division: allow"
+                option="-mdiv"
+                supersedes="-mno-div"/>
+        <Option name="Use hardware instructions for integer division: disallow"
+                option="-mno-div"
+                supersedes="-mdiv"/>
+        <Option name="Produce code conforming to ISA specification version 2.2"
+                option="-misa-spec=2.2"
+                supersedes="-misa-spec=20190608 -misa-spec=20191213"/>
+        <Option name="Produce code conforming to ISA specification version 20190608"
+                option="-misa-spec=20190608"
+                supersedes="-misa-spec=2.2 -misa-spec=20191213"/>
+        <Option name="Produce code conforming to ISA specification version 20191213 (default)"
+                option="-misa-spec=20191213"
+                supersedes="-misa-spec=2.2 -misa-spec=20190608"/>
+        <Option name="Use smaller but slower prologue/epilogue code that uses library calls: allow"
+                option="-msave-restore"
+                supersedes="-mno-save-restore"/>
+        <Option name="Use smaller but slower prologue/epilogue code that uses library calls: disallow (default)"
+                option="-mno-save-restore"
+                supersedes="-msave-restore"/>
+        <Option name="Attempt to make more use of compressed load/store instructions: allow"
+                option="-mshorten-memrefs"
+                supersedes="-mno-shorten-memrefs"/>
+        <Option name="Attempt to make more use of compressed load/store instructions: disallow"
+                option="-mno-shorten-memrefs"
+                supersedes="-mshorten-memrefs"/>
+        <Option name="Generate unaligned memory accesses: allow"
+                option="-mstrict-align"
+                supersedes="-mno-strict-align"/>
+        <Option name="Generate unaligned memory accesses: disallow"
+                option="-mno-strict-align"
+                supersedes="-mstrict-align"/>
+        <Option name="Generate code for the medium-low code model"
+                option="-mcmodel=medlow"
+                supersedes="-mcmodel=medany"/>
+        <Option name="Generate code for the medium-any code model"
+                option="-mcmodel=medany"
+                supersedes="-mcmodel=medlow"/>
+        <Option name="Use assembler relocation operators when dealing with symbolic addresses: allow"
+                option="-mexplicit-relocs"
+                supersedes="-mno-exlicit-relocs"/>
+        <Option name="Use assembler relocation operators when dealing with symbolic addresses: disallow"
+                option="-mno-exlicit-relocs"
+                supersedes="-mexplicit-relocs"/>
+        <Option name="Take advantage of linker relaxations: allow (default)"
+                option="-mrelax"
+                supersedes="-mno-relax"/>
+        <Option name="Take advantage of linker relaxations: disallow"
+                option="-mno-relax"
+                supersedes="-mrelax"/>
+        <Option name="Emit RISC-V attribute to record extra information into ELF objects: allow"
+                option="-mriscv-attribute"
+                supersedes="-mno-riscv-attribute"/>
+        <Option name="Emit RISC-V attribute to record extra information into ELF objects: disallow"
+                option="-mno-riscv-attribute"
+                supersedes="-mriscv-attribute"/>
+        <Option name="CSR checking: allow"
+                option="-mcsr-check"
+                supersedes="-mno-csr-check"/>
+        <Option name="CSR checking: disallow"
+                option="-mno-csr-check"
+                supersedes="-mcsr-check"/>
+        <Option name="Alignment of variables and constants: X register width (default)"
+                option="-malign-data=xlen"
+                supersedes="-malign-data=natural"/>
+        <Option name="Alignment of variables and constants: natural"
+                option="-malign-data=natural"
+                supersedes="-malign-data=xlen"/>
         <Option name="Generate code for little-endian processors"
                 option="-mlittle-endian"
                 supersedes="-mbig-endian"/>
@@ -223,58 +223,58 @@
                 supersedes="-mlittle-endian"/>
     </Category>
 
-	<Category name="RISC-V architecture">
-		<Option name="RV32I"
-				option="-march=rv32i"
-				supersedes="-march=rv32im -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
-		<Option name="RV32IM"
-				option="-march=rv32im"
-				supersedes="-march=rv32i -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
-		<Option name="RV32IMAC"
-				option="-march=rv32imac"
-				supersedes="-march=rv32i -march=rv32im -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
-		<Option name="RV32IMACF"
-				option="-march=rv32imacf"
-				supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
-		<Option name="RV32E"
-				option="-march=rv32e"
-				supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32imacf -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
-		<Option name="RV32EC"
-				option="-march=rv32ec"
-				supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec_zicsr -march=rv64i"/>
-		<Option name="RV32EC with CSR"
-				option="-march=rv32ec_zicsr"
-				supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv64i"/>
-		<!-- TODO: add 'rv32ecxw' for CH32V003? Assuming mainline GCC supports it -->
-		<Option name="RV64I"
-				option="-march=rv64i"
-				supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr"/>
-	</Category>
+    <Category name="RISC-V architecture">
+        <Option name="RV32I"
+                option="-march=rv32i"
+                supersedes="-march=rv32im -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
+        <Option name="RV32IM"
+                option="-march=rv32im"
+                supersedes="-march=rv32i -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
+        <Option name="RV32IMAC"
+                option="-march=rv32imac"
+                supersedes="-march=rv32i -march=rv32im -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
+        <Option name="RV32IMACF"
+                option="-march=rv32imacf"
+                supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
+        <Option name="RV32E"
+                option="-march=rv32e"
+                supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32imacf -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
+        <Option name="RV32EC"
+                option="-march=rv32ec"
+                supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec_zicsr -march=rv64i"/>
+        <Option name="RV32EC with CSR"
+                option="-march=rv32ec_zicsr"
+                supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv64i"/>
+        <!-- TODO: add 'rv32ecxw' for CH32V003? Assuming mainline GCC supports it -->
+        <Option name="RV64I"
+                option="-march=rv64i"
+                supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr"/>
+    </Category>
 
-	<Category name="RISC-V ABI calling conventions">
-		<!-- See https://www.sifive.com/blog/all-aboard-part-1-compiler-args -->
-		<Option name="32-bit int, long and pointers"
-				option="-mabi=ilp32"
-				supersedes="-mabi=ilp32f -mabi=ilp32d -mabi=ilp32e -mabi=lp64 -mabi=lp64f -mabi=lp64d"/>
-		<Option name="32-bit int, long and pointers; 32-bit or smaller floats passed in registers (F extension only)"
-				option="-mabi=ilp32f"
-				supersedes="-mabi=ilp32 -mabi=ilp32d -mabi=ilp32e -mabi=lp64 -mabi=lp64f -mabi=lp64d"/>
-		<Option name="32-bit int, long and pointers; 64-bit or smaller floats passed in registers (D extension only)"
-				option="-mabi=ilp32d"
-				supersedes="-mabi=ilp32 -mabi=ilp32f -mabi=ilp32e -mabi=lp64 -mabi=lp64f -mabi=lp64d"/>
-		<Option name="32-bit int, long and pointers (RV32E architecture only)"
-				option="-mabi=ilp32e"
-				supersedes=" -mabi=ilp32 -mabi=ilp32f -mabi=ilp32d -mabi=lp64 -mabi=lp64f -mabi=lp64d"/>
-		<Option name="32-bit int; 64-bit long and pointers"
-				option="-mabi=lp64"
-				supersedes="-mabi=ilp32 -mabi=ilp32f -mabi=ilp32d -mabi=ilp32e -mabi=lp64f -mabi=lp64d"/>
-		<Option name="32-bit int; 64-bit long and pointers; 32-bit or smaller floats passed in registers (F extension only)"
-				option="-mabi=lp64f"
-				supersedes="-mabi=ilp32 -mabi=ilp32f -mabi=ilp32d -mabi=ilp32e -mabi=lp64 -mabi=lp64d"/>
-		<Option name="32-bit int; 64-bit long and pointers; 64-bit or smaller floats passed in registers (D extension only)"
-				option="-mabi=lp64d"
-				supersedes="-mabi=ilp32 -mabi=ilp32f -mabi=ilp32d -mabi=ilp32e -mabi=lp64 -mabi=lp64f"/>
-	</Category>
+    <Category name="RISC-V ABI calling conventions">
+        <!-- See https://www.sifive.com/blog/all-aboard-part-1-compiler-args -->
+        <Option name="32-bit int, long and pointers"
+                option="-mabi=ilp32"
+                supersedes="-mabi=ilp32f -mabi=ilp32d -mabi=ilp32e -mabi=lp64 -mabi=lp64f -mabi=lp64d"/>
+        <Option name="32-bit int, long and pointers; 32-bit or smaller floats passed in registers (F extension only)"
+                option="-mabi=ilp32f"
+                supersedes="-mabi=ilp32 -mabi=ilp32d -mabi=ilp32e -mabi=lp64 -mabi=lp64f -mabi=lp64d"/>
+        <Option name="32-bit int, long and pointers; 64-bit or smaller floats passed in registers (D extension only)"
+                option="-mabi=ilp32d"
+                supersedes="-mabi=ilp32 -mabi=ilp32f -mabi=ilp32e -mabi=lp64 -mabi=lp64f -mabi=lp64d"/>
+        <Option name="32-bit int, long and pointers (RV32E architecture only)"
+                option="-mabi=ilp32e"
+                supersedes=" -mabi=ilp32 -mabi=ilp32f -mabi=ilp32d -mabi=lp64 -mabi=lp64f -mabi=lp64d"/>
+        <Option name="32-bit int; 64-bit long and pointers"
+                option="-mabi=lp64"
+                supersedes="-mabi=ilp32 -mabi=ilp32f -mabi=ilp32d -mabi=ilp32e -mabi=lp64f -mabi=lp64d"/>
+        <Option name="32-bit int; 64-bit long and pointers; 32-bit or smaller floats passed in registers (F extension only)"
+                option="-mabi=lp64f"
+                supersedes="-mabi=ilp32 -mabi=ilp32f -mabi=ilp32d -mabi=ilp32e -mabi=lp64 -mabi=lp64d"/>
+        <Option name="32-bit int; 64-bit long and pointers; 64-bit or smaller floats passed in registers (D extension only)"
+                option="-mabi=lp64d"
+                supersedes="-mabi=ilp32 -mabi=ilp32f -mabi=ilp32d -mabi=ilp32e -mabi=lp64 -mabi=lp64f"/>
+    </Category>
 
     <Command name="CompileObject"
              value="$compiler $options $includes -c $file -o $object"/>
