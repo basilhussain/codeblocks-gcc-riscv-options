@@ -35,12 +35,32 @@
     <Switch name="linkerNeedsLibPrefix"    value="false"/>
     <Switch name="linkerNeedsLibExtension" value="false"/>
 
-    <Option name="Produce debugging symbols"
-            option="-g"
-            category="Debugging"
-            checkAgainst="-O -O1 -O2 -O3 -Os"
-            checkMessage="You have optimizations enabled. This is Not A Good Thing(tm) when producing debugging symbols..."
-            supersedes="-s"/>
+    <Category name="Debugging">
+		<Option name="Produce debugging information"
+				option="-g"
+				supersedes="-g1 -g2 -g3 -ggdb -ggdb1 -ggdb2 -ggdb3 -s"/>
+		<Option name="Produce level 1 debugging information (minimal)"
+				option="-g1"
+				supersedes="-g -g2 -g3 -ggdb -ggdb1 -ggdb2 -ggdb3 -s"/>
+		<Option name="Produce level 2 debugging information (default, same as -g)"
+				option="-g2"
+				supersedes="-g -g1 -g3 -ggdb -ggdb1 -ggdb2 -ggdb3 -s"/>
+		<Option name="Produce level 3 debugging information (extra)"
+				option="-g3"
+				supersedes="-g -g1 -g2 -ggdb -ggdb1 -ggdb2 -ggdb3 -s"/>
+		<Option name="Produce debugging information for use by GDB"
+				option="-ggdb"
+				supersedes="-g -g1 -g2 -g3 -ggdb1 -ggdb2 -ggdb3 -s"/>
+		<Option name="Produce level 1 debugging information for use by GDB (minimal)"
+				option="-ggdb1"
+				supersedes="-g -g1 -g2 -g3 -ggdb -ggdb2 -ggdb3 -s"/>
+		<Option name="Produce level 2 debugging information for use by GDB (default, same as -ggdb)"
+				option="-ggdb2"
+				supersedes="-g -g1 -g2 -g3 -ggdb -ggdb1 -ggdb3 -s"/>
+		<Option name="Produce level 3 debugging information for use by GDB (extra)"
+				option="-ggdb3"
+				supersedes="-g -g1 -g2 -g3 -ggdb -ggdb1 -ggdb2 -s"/>
+	</Category>
 
     <if platform="windows">
         <Option name="Profile code when executed"
