@@ -226,29 +226,40 @@
     <Category name="RISC-V architecture">
         <Option name="RV32I"
                 option="-march=rv32i"
-                supersedes="-march=rv32im -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
+                supersedes="-march=rv32im -march=rv32imc -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv32emc -march=rv64i -march=rv64imacf -march=rv64imafdc_zicsr_zifencei"/>
         <Option name="RV32IM"
                 option="-march=rv32im"
-                supersedes="-march=rv32i -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
+                supersedes="-march=rv32i -march=rv32imc -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv32emc -march=rv64i -march=rv64imacf -march=rv64imafdc_zicsr_zifencei"/>
+        <Option name="RV32IMC"
+                option="-march=rv32imc"
+                supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv32emc -march=rv64i -march=rv64imacf -march=rv64imafdc_zicsr_zifencei"/>
         <Option name="RV32IMAC"
                 option="-march=rv32imac"
-                supersedes="-march=rv32i -march=rv32im -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
+                supersedes="-march=rv32i -march=rv32im -march=rv32imc -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv32emc -march=rv64i -march=rv64imacf -march=rv64imafdc_zicsr_zifencei"/>
         <Option name="RV32IMACF"
                 option="-march=rv32imacf"
-                supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
+                supersedes="-march=rv32i -march=rv32im -march=rv32imc -march=rv32imac -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv32emc -march=rv64i -march=rv64imacf -march=rv64imafdc_zicsr_zifencei"/>
         <Option name="RV32E"
                 option="-march=rv32e"
-                supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32imacf -march=rv32ec -march=rv32ec_zicsr -march=rv64i"/>
+                supersedes="-march=rv32i -march=rv32im -march=rv32imc -march=rv32imac -march=rv32imacf -march=rv32ec -march=rv32ec_zicsr -march=rv32emc -march=rv64i -march=rv64imacf -march=rv64imafdc_zicsr_zifencei"/>
         <Option name="RV32EC"
                 option="-march=rv32ec"
-                supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec_zicsr -march=rv64i"/>
+                supersedes="-march=rv32i -march=rv32im -march=rv32imc -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec_zicsr -march=rv32emc -march=rv64i -march=rv64imacf -march=rv64imafdc_zicsr_zifencei"/>
         <Option name="RV32EC with CSR"
                 option="-march=rv32ec_zicsr"
-                supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv64i"/>
-        <!-- TODO: add 'rv32ecxw' for CH32V003? Assuming mainline GCC supports it -->
+                supersedes="-march=rv32i -march=rv32im -march=rv32imc -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32emc -march=rv64i -march=rv64imacf -march=rv64imafdc_zicsr_zifencei"/>
+        <Option name="RV32EMC"
+                option="-march=rv32emc"
+                supersedes="-march=rv32i -march=rv32im -march=rv32imc -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec_zicsr -march=rv64i -march=rv64imacf -march=rv64imafdc_zicsr_zifencei"/>
         <Option name="RV64I"
                 option="-march=rv64i"
-                supersedes="-march=rv32i -march=rv32im -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr"/>
+                supersedes="-march=rv32i -march=rv32im -march=rv32imc -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv32emc -march=rv64imacf -march=rv64imafdc_zicsr_zifencei"/>
+        <Option name="RV64IMACF"
+                option="-march=rv64imacf"
+                supersedes="-march=rv32i -march=rv32im -march=rv32imc -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv32emc -march=rv64i -march=rv64imafdc_zicsr_zifencei"/>
+        <Option name="RV64GC"
+                option="-march=rv64imafdc_zicsr_zifencei"
+                supersedes="-march=rv32i -march=rv32im -march=rv32imc -march=rv32imac -march=rv32imacf -march=rv32e -march=rv32ec -march=rv32ec_zicsr -march=rv32emc -march=rv64i -march=rv64imacf"/>
     </Category>
 
     <Category name="RISC-V ABI calling conventions">
@@ -274,6 +285,19 @@
         <Option name="32-bit int; 64-bit long and pointers; 64-bit or smaller floats passed in registers (D extension only)"
                 option="-mabi=lp64d"
                 supersedes="-mabi=ilp32 -mabi=ilp32f -mabi=ilp32d -mabi=ilp32e -mabi=lp64 -mabi=lp64f"/>
+    </Category>
+
+    <Category name="Standard library">
+        <Option name="Use newlib-nano"
+                option="-specs=nano.specs"
+                supersedes="-specs=picolibc.specs"/>
+        <Option name="Use Picolibc"
+                option="-specs=picolibc.specs"
+                supersedes="-specs=nano.specs"/>
+        <Option name="Implement system calls as stubs"
+                option="-specs=nosys.specs"/>
+        <Option name="Implement system calls using semihosting"
+                option="-specs=semihost.specs"/>
     </Category>
 
     <Command name="CompileObject"
